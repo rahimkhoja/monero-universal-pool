@@ -1,0 +1,14 @@
+[Unit]
+Description=Monero Wallet RPC Daemon
+After=network.target monero-node.service
+
+[Service]
+User=root
+Group=root
+Restart=always
+RestartSec=60
+Type=simple
+ExecStart=/opt/monero/bin/monero-wallet-rpc --wallet-file=/opt/monero/wallets/hiive_monero_pool_wallet.bin --password seceret_password --daemon-address 172.16.254.80:18081 --rpc-bind-port 8082 --log-file /var/log/monero/monero-rpc.log --rpc-bind-ip 172.16.254.80 --confirm-external-bind --disable-rpc-login
+
+[Install]
+WantedBy=multi-user.target
