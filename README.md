@@ -1,30 +1,29 @@
-node-cryptonote-pool
-====================
+monero-cryptonote-pool
+======================
 
 High performance Node.js (with native C addons) mining pool for CryptoNote based coins. ( Monero )
 
 
 
 #### Table of Contents
+* [Features](#features)
+* [Community Support](#community--support)
+* [Pools Using This Software](#pools-using-this-software)
+* [Usage](#usage)
+  * [Requirements](#requirements)
+  * [Downloading & Installing](#1-downloading--installing)
+  * [Configuration](#2-configuration)
+  * [Configure Easyminer](#3-optional-configure-cryptonote-easy-miner-for-your-pool)
+  * [Starting the Pool](#4-start-the-pool)
+  * [Host the front-end](#5-host-the-front-end)
+  * [Customizing your website](#6-customize-your-website)
+  * [Upgrading](#upgrading)
+* [JSON-RPC Commands from CLI](#json-rpc-commands-from-cli)
+* [Monitoring Your Pool](#monitoring-your-pool)
+* [Donations](#donations)
+* [Credits](#credits)
+* [License](#license)
 
-    Features
-    Community Support
-    Pools Using This Software
-    Usage
-        Requirements
-        Downloading & Installing
-        Configuration
-        Configure Easyminer
-        Starting the Pool
-        Host the front-end
-        Customizing your website
-        Upgrading
-    Setting up Testnet
-    JSON-RPC Commands from CLI
-    Monitoring Your Pool
-    Donations
-    Credits
-    License
 
 #### Basic features
 
@@ -51,7 +50,7 @@ High performance Node.js (with native C addons) mining pool for CryptoNote based
         Blocks found (pending, confirmed, and orphaned)
     An easily extendable, responsive, light-weight front-end using API to display data
 
-Extra features
+#### Extra features
 
     Admin panel
         Aggregated pool statistics
@@ -67,7 +66,7 @@ Extra features
     Set fixed difficulty on miner client by passing "address" param with ".[difficulty]" postfix
     Prevent "transaction is too big" error with "payments.maxTransactionAmount" option
 
-Support
+#### Support
 
     Since I am extreemly lazy I am not going to offer support.
     
@@ -76,20 +75,20 @@ Support
     https://github.com/fancoder/cryptonote-universal-pool
     https://github.com/zone117x/node-cryptonote-pool
 
-Pools Using This Software
+#### Pools Using This Software
 
     http://monero.hiive.biz
 
-Usage
+#### Usage
 Requirements
 
-    Coin daemon(s) (find the coin's repo and build latest version from source)
-    Node.js v0.10+ (follow these installation instructions)
-    Redis key-value store v2.6+ (follow these instructions)
-    libssl required for the node-multi-hashing module
-        For Ubuntu: sudo apt-get install libssl-dev
-    Boost is required for the cryptonote-util module
-        For Ubuntu: sudo apt-get install libboost-all-dev
+* Coin daemon(s) (find the coin's repo and build latest version from source)
+* Node.js v0.10+ (follow these installation instructions)
+* Redis key-value store v2.6+ (follow these instructions)
+* libssl required for the node-multi-hashing module
+  For Ubuntu: sudo apt-get install libssl-dev
+* Boost is required for the cryptonote-util module
+  For Ubuntu: sudo apt-get install libboost-all-dev
 
 Seriously
 
@@ -367,25 +366,25 @@ Curl can be used to use the JSON-RPC commands from command-line. Here is an exam
 
 curl 127.0.0.1:18081/json_rpc -d '{"method":"getblockheaderbyheight","params":{"height":100}}'
 
-Monitoring Your Pool
+#### Monitoring Your Pool
 
     To inspect and make changes to redis I suggest using redis-commander
     To monitor server load for CPU, Network, IO, etc - I suggest using New Relic
     To keep your pool node script running in background, logging to file, and automatically restarting if it crashes - I suggest using forever
 
-Donations
+#### Donations
 
     BTC: 1K4N5msYZHse6Hbxz4oWUjwqPf8wu6ducV
     XMR: 42VxjBpfi4TS6KFjNrrKo3QLcyK7gBGfM9w7DxmGRcocYnEbJ1hhZWXfaHJtCXBxnL74DpkioPSivjRYU8qkt59s3EaHUU3
 
-Credits
+#### Credits
 
     Many Bothans died getting this pool to you. Honor them by sending me some BTC or XMR.
     
     https://github.com/fancoder/cryptonote-universal-pool
     https://github.com/zone117x/node-cryptonote-pool
 
-License
+#### License
 
 Released under the GNU General Public License v2
 
