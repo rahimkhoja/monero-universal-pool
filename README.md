@@ -96,14 +96,13 @@ Usage
 * libssl required for the node-multi-hashing module
   * For Ubuntu: `sudo apt-get install libssl-dev`
 
-
-##### Seriously
-Those are legitimate requirements. If you use old versions of Node.js or Redis that may come with your system package manager then you will have problems. Follow the linked instructions to get the last stable versions.
+If you use old versions of Node.js or Redis that may come with your system package manager then you will have problems. Follow the linked instructions to get the last stable versions.
 
 
 [**Redis security warning**](http://redis.io/topics/security): be sure firewall access to redis - an easy way is to
 include `bind 127.0.0.1` in your `redis.conf` file. Also it's a good idea to learn about and understand software that
 you are using - a good place to start with redis is [data persistence](http://redis.io/topics/persistence).
+
 
 ##### Easy install on Ubuntu 14 LTS
 Installing pool on different Linux distributives is different because it depends on system default components and versions. For now the easiest way to install pool is to use Ubuntu 14 LTS. Thus, all you had to do in order to prepare Ubunty 14 for pool installation is to run:
@@ -123,6 +122,9 @@ git clone https://github.com/CanadianRepublican/monero-universal-pool.git pool
 cd pool
 npm update
 ```
+
+Systemd files have been added for the Monero Daemon and Monero Wallet in the Utils folder.
+They will need to be customized for your own setup.
 
 #### 2) Configuration
 
@@ -473,9 +475,9 @@ curl 127.0.0.1:18081/json_rpc -d '{"method":"getblockheaderbyheight","params":{"
 
 #### Monitoring Your Pool
 
-    To inspect and make changes to redis I suggest using redis-commander
-    To monitor server load for CPU, Network, IO, etc - I suggest using New Relic
-    To keep your pool node script running in background, logging to file, and automatically restarting if it crashes - I suggest using forever
+ * To inspect and make changes to redis I suggest using redis-commander
+ * To monitor server load for CPU, Network, IO, etc - I suggest using New Relic
+ * To keep your pool node script running in background, logging to file, and automatically restarting if it crashes - I suggest using forever
 
 
 Donations
