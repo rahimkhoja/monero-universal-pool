@@ -18,7 +18,6 @@ High performance Node.js (with native C addons) mining pool for CryptoNote based
   * [Host the front-end](#5-host-the-front-end)
   * [Customizing your website](#6-customize-your-website)
   * [Upgrading](#upgrading)
-* [Setting up Testnet](#setting-up-testnet)
 * [JSON-RPC Commands from CLI](#json-rpc-commands-from-cli)
 * [Monitoring Your Pool](#monitoring-your-pool)
 * [Donations](#donations)
@@ -82,29 +81,43 @@ High performance Node.js (with native C addons) mining pool for CryptoNote based
 
 * http://monero.hiive.biz
 
-#### Usage
-Requirements
+Usage
+===
 
+#### Requirements
 * Coin daemon(s) (find the coin's repo and build latest version from source)
-* Node.js v0.10+ (follow these installation instructions)
-* Redis key-value store v2.6+ (follow these instructions)
+* [Node.js](http://nodejs.org/) v0.10+ ([follow these installation instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager))
+* [Redis](http://redis.io/) key-value store v2.6+ ([follow these instructions](http://redis.io/topics/quickstart))
 * libssl required for the node-multi-hashing module
-  For Ubuntu: sudo apt-get install libssl-dev
-* Boost is required for the cryptonote-util module
-  For Ubuntu: sudo apt-get install libboost-all-dev
+  * For Ubuntu: `sudo apt-get install libssl-dev`
 
-Seriously
 
+##### Seriously
 Those are legitimate requirements. If you use old versions of Node.js or Redis that may come with your system package manager then you will have problems. Follow the linked instructions to get the last stable versions.
 
-Redis security warning: be sure firewall access to redis - an easy way is to include bind 127.0.0.1 in your redis.conf file. Also it's a good idea to learn about and understand software that you are using - a good place to start with redis is data persistence.
-1) Downloading & Installing
 
-Clone the repository and run npm update for all the dependencies to be installed:
+[**Redis security warning**](http://redis.io/topics/security): be sure firewall access to redis - an easy way is to
+include `bind 127.0.0.1` in your `redis.conf` file. Also it's a good idea to learn about and understand software that
+you are using - a good place to start with redis is [data persistence](http://redis.io/topics/persistence).
 
-git clone https://github.com/zone117x/node-cryptonote-pool.git pool
+##### Easy install on Ubuntu 14 LTS
+Installing pool on different Linux distributives is different because it depends on system default components and versions. For now the easiest way to install pool is to use Ubuntu 14 LTS. Thus, all you had to do in order to prepare Ubunty 14 for pool installation is to run:
+
+```bash
+sudo apt-get install git redis-server libboost1.55-all-dev nodejs-dev nodejs-legacy npm cmake libssl-dev
+```
+
+
+#### 1) Downloading & Installing
+
+
+Clone the repository and run `npm update` for all the dependencies to be installed:
+
+```bash
+git clone https://github.com/fancoder/cryptonote-universal-pool.git pool
 cd pool
 npm update
+```
 
 2) Configuration
 
