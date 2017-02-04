@@ -351,16 +351,6 @@ When updating to the latest code its important to not only git pull the latest f
     Run npm update to force updating/reinstalling of the dependencies.
     Compare your config.json to the latest example ones in this repo or the ones in the setup instructions where each config field is explained. You may need to modify or add any new changes.
 
-Setting up Testnet
-
-No cryptonote based coins have a testnet mode (yet) but you can effectively create a testnet with the following steps:
-
-    Open /src/p2p/net_node.inl and remove lines with ADD_HARDCODED_SEED_NODE to prevent it from connecting to mainnet (Monero example: http://git.io/0a12_Q)
-    Build the coin from source
-    You now need to run two instance of the daemon and connect them to each other (without a connection to another instance the daemon will not accept RPC requests)
-        Run first instance with ./coind --p2p-bind-port 28080 --allow-local-ip
-        Run second instance with ./coind --p2p-bind-port 5011 --rpc-bind-port 5010 --add-peer 0.0.0.0:28080 --allow-local-ip
-    You should now have a local testnet setup. The ports can be changes as long as the second instance is pointed to the first instance, obviously
 
 Credit to surfer43 for these instructions
 JSON-RPC Commands from CLI
@@ -382,8 +372,8 @@ Monitoring Your Pool
 
 Donations
 
-    BTC: 1667jMt7NTZDaC8WXAxtMYBR8DPWCVoU4d
-    XMR: 48Y4SoUJM5L3YXBEfNQ8bFNsvTNsqcH5Rgq8RF7BwpgvTBj2xr7CmWVanaw7L4U9MnZ4AG7U6Pn1pBhfQhFyFZ1rL1efL8z
+    BTC: 1K4N5msYZHse6Hbxz4oWUjwqPf8wu6ducV
+    XMR: 42VxjBpfi4TS6KFjNrrKo3QLcyK7gBGfM9w7DxmGRcocYnEbJ1hhZWXfaHJtCXBxnL74DpkioPSivjRYU8qkt59s3EaHUU3
 
 Credits
 
