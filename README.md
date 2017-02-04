@@ -18,6 +18,7 @@ High performance Node.js (with native C addons) mining pool for CryptoNote based
   * [Host the front-end](#5-host-the-front-end)
   * [Customizing your website](#6-customize-your-website)
   * [Upgrading](#upgrading)
+* [Setting up Testnet](#setting-up-testnet)
 * [JSON-RPC Commands from CLI](#json-rpc-commands-from-cli)
 * [Monitoring Your Pool](#monitoring-your-pool)
 * [Donations](#donations)
@@ -27,44 +28,46 @@ High performance Node.js (with native C addons) mining pool for CryptoNote based
 
 #### Basic features
 
-    TCP (stratum-like) protocol for server-push based jobs
-        Compared to old HTTP protocol, this has a higher hash rate, lower network/CPU server load, lower orphan block percent, and less error prone
-    IP banning to prevent low-diff share attacks
-    Socket flooding detection
-    Payment processing
-        Splintered transactions to deal with max transaction size
-        Minimum payment threshold before balance will be paid out
-        Minimum denomination for truncating payment amount precision to reduce size/complexity of block transactions
-    Detailed logging
-    Ability to configure multiple ports - each with their own difficulty
-    Variable difficulty / share limiter
-    Share trust algorithm to reduce share validation hashing CPU load
-    Clustering for vertical scaling
-    Modular components for horizontal scaling (pool server, database, stats/API, payment processing, front-end)
-    Live stats API (using AJAX long polling with CORS)
-        Currency network/block difficulty
-        Current block height
-        Network hashrate
-        Pool hashrate
-        Each miners' individual stats (hashrate, shares submitted, pending balance, total paid, etc)
-        Blocks found (pending, confirmed, and orphaned)
-    An easily extendable, responsive, light-weight front-end using API to display data
+* TCP (stratum-like) protocol for server-push based jobs
+  * Compared to old HTTP protocol, this has a higher hash rate, lower network/CPU server load, lower orphan
+    block percent, and less error prone
+* IP banning to prevent low-diff share attacks
+* Socket flooding detection
+* Payment processing
+  * Splintered transactions to deal with max transaction size
+  * Minimum payment threshold before balance will be paid out
+  * Minimum denomination for truncating payment amount precision to reduce size/complexity of block transactions
+* Detailed logging
+* Ability to configure multiple ports - each with their own difficulty
+* Variable difficulty / share limiter
+* Share trust algorithm to reduce share validation hashing CPU load
+* Clustering for vertical scaling
+* Modular components for horizontal scaling (pool server, database, stats/API, payment processing, front-end)
+* Live stats API (using AJAX long polling with CORS)
+  * Currency network/block difficulty
+  * Current block height
+  * Network hashrate
+  * Pool hashrate
+  * Each miners' individual stats (hashrate, shares submitted, pending balance, total paid, etc)
+  * Blocks found (pending, confirmed, and orphaned)
+* An easily extendable, responsive, light-weight front-end using API to display data
 
 #### Extra features
 
-    Admin panel
-        Aggregated pool statistics
-        Coin daemon & wallet RPC services stability monitoring
-        Log files data access
-        Users list with detailed statistics
-    Historic charts of pool's hashrate and miners count, coin difficulty, rates and coin profitability
-    Historic charts of users's hashrate and payments
-    Miner login(wallet address) validation
-    Five configurable CSS themes
-    Universal blocks and transactions explorer based on chainradar.com
-    FantomCoin & MonetaVerde support
-    Set fixed difficulty on miner client by passing "address" param with ".[difficulty]" postfix
-    Prevent "transaction is too big" error with "payments.maxTransactionAmount" option
+* Admin panel
+  * Aggregated pool statistics
+  * Coin daemon & wallet RPC services stability monitoring
+  * Log files data access
+  * Users list with detailed statistics
+* Historic charts of pool's hashrate and miners count, coin difficulty, rates and coin profitability
+* Historic charts of users's hashrate and payments
+* Miner login(wallet address) validation
+* Five configurable CSS themes
+* Universal blocks and transactions explorer based on [chainradar.com](http://chainradar.com)
+* FantomCoin & MonetaVerde support
+* Set fixed difficulty on miner client by passing "address" param with ".[difficulty]" postfix
+* Prevent "transaction is too big" error with "payments.maxTransactionAmount" option
+
 
 #### Support
 
@@ -77,7 +80,7 @@ High performance Node.js (with native C addons) mining pool for CryptoNote based
 
 #### Pools Using This Software
 
-    http://monero.hiive.biz
+* http://monero.hiive.biz
 
 #### Usage
 Requirements
