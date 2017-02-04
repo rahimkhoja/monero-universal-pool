@@ -453,7 +453,7 @@ JSON-RPC Commands from CLI
 Documentation for JSON-RPC commands can be found here:
 
     Daemon https://wiki.bytecoin.org/wiki/Daemon_JSON_RPC_API
-    Wallet https://wiki.bytecoin.org/wiki/Wallet_JSON_RPC_API
+    Wallet https://wiki.bytecoin.org/wiki/Wallet_JSON_RPC_API 
 
 Curl can be used to use the JSON-RPC commands from command-line. Here is an example of calling getblockheaderbyheight for block 100:
 
@@ -465,20 +465,23 @@ curl 127.0.0.1:18081/json_rpc -d '{"method":"getblockheaderbyheight","params":{"
     To monitor server load for CPU, Network, IO, etc - I suggest using New Relic
     To keep your pool node script running in background, logging to file, and automatically restarting if it crashes - I suggest using forever
 
-#### Donations
+Donations
+---------
 
-    BTC: 1K4N5msYZHse6Hbxz4oWUjwqPf8wu6ducV
-    XMR: 42VxjBpfi4TS6KFjNrrKo3QLcyK7gBGfM9w7DxmGRcocYnEbJ1hhZWXfaHJtCXBxnL74DpkioPSivjRYU8qkt59s3EaHUU3
+ * BTC: 1K4N5msYZHse6Hbxz4oWUjwqPf8wu6ducV
+ * XMR: 42VxjBpfi4TS6KFjNrrKo3QLcyK7gBGfM9w7DxmGRcocYnEbJ1hhZWXfaHJtCXBxnL74DpkioPSivjRYU8qkt59s3EaHUU3
 
-#### Credits
+Credits
+-------
 
-    Many Bothans died getting this pool to you. Honor them by sending me some BTC or XMR.
+Many Bothans died getting this pool to you. Honor them by sending me some BTC or XMR.
     
-    https://github.com/fancoder/cryptonote-universal-pool
-    https://github.com/zone117x/node-cryptonote-pool
+ * https://github.com/fancoder/cryptonote-universal-pool
+ * https://github.com/zone117x/node-cryptonote-pool
 
-#### License
+License
+-------
 
 Released under the GNU General Public License v2
 
-http://www.gnu.org/licenses/gpl-2.0.html
+ * http://www.gnu.org/licenses/gpl-2.0.html
