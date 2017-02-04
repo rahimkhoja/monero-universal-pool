@@ -1,8 +1,11 @@
 node-cryptonote-pool
+====================
 
 High performance Node.js (with native C addons) mining pool for CryptoNote based coins. ( Monero )
 
-Table of Contents
+
+
+#### Table of Contents
 
     Features
     Community Support
@@ -23,7 +26,7 @@ Table of Contents
     Credits
     License
 
-Basic features
+#### Basic features
 
     TCP (stratum-like) protocol for server-push based jobs
         Compared to old HTTP protocol, this has a higher hash rate, lower network/CPU server load, lower orphan block percent, and less error prone
