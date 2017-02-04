@@ -68,25 +68,30 @@ High performance Node.js (with native C addons) mining pool for CryptoNote based
 * Prevent "transaction is too big" error with "payments.maxTransactionAmount" option
 
 
+
 #### Support
 
-    Since I am extreemly lazy I am not going to offer support.
+Since I am extreemly lazy I am not going to offer support.
     
-    However both cryptonote-universal-pool & node-cryptonote-pool provide much of the needed support.
+However both cryptonote-universal-pool & node-cryptonote-pool provide much of the needed support.
     
-    https://github.com/fancoder/cryptonote-universal-pool
-    https://github.com/zone117x/node-cryptonote-pool
+ * https://github.com/fancoder/cryptonote-universal-pool
+ * https://github.com/zone117x/node-cryptonote-pool
+
+
 
 #### Pools Using This Software
 
 * http://monero.hiive.biz
 
+
 Usage
-===
+====
 
 #### Requirements
 * Coin daemon(s) (find the coin's repo and build latest version from source)
 * [Node.js](http://nodejs.org/) v0.10+ ([follow these installation instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager))
+  * I used node-v0.10.48-linux-x64 on Ubuntu
 * [Redis](http://redis.io/) key-value store v2.6+ ([follow these instructions](http://redis.io/topics/quickstart))
 * libssl required for the node-multi-hashing module
   * For Ubuntu: `sudo apt-get install libssl-dev`
@@ -125,16 +130,16 @@ npm update
 Explanation for each field:
 ```javascript
 /* Used for storage in redis so multiple coins can share the same redis instance. */
-"coin": "ducknote",
+"coin": "Monero",
 
 /* Used for front-end display */
-"symbol": "XDN",
+"symbol": "XMR",
 
 /* Minimum units in a single coin, see COIN constant in DAEMON_CODE/src/cryptonote_config.h */
 "coinUnits": 100000000,
 
 /* Coin network time to mine one block, see DIFFICULTY_TARGET constant in DAEMON_CODE/src/cryptonote_config.h */
-"coinDifficultyTarget": 240,
+"coinDifficultyTarget": 120,
 
 "logging": {
 
@@ -170,7 +175,7 @@ Explanation for each field:
     "clusterForks": "auto",
 
     /* Address where block rewards go, and miner payments come from. */
-    "poolAddress": "ddehi53dwGSBEXdhTYtga2R3fS4y9hRz4YHAsLABJpH75yUd5EDQmuL3yDBj1mG6MMeDfydY9vp4zFVVNQ99FTYq2PpsFJP2y"
+    "poolAddress": "42VxjBpfi4TS6KFjNrrKo3QLcyK7gBGfM9w7DxmGRcocYnEbJ1hhZWXfaHJtCXBxnL74DpkioPSivjRYU8qkt59s3EaHUU3"
 
     /* Poll RPC daemons for new blocks every this many milliseconds. */
     "blockRefreshInterval": 1000,
@@ -208,8 +213,9 @@ Explanation for each field:
         "maxJump": 100 //Limit diff percent increase/decrease in a single retargetting
     },
 
+    // This did not work for me
     /* Set difficulty on miner client side by passing <address> param with .<difficulty> postfix
-       minerd -u 4AsBy39rpUMTmgTUARGq2bFQWhDhdQNekK5v4uaLU699NPAnx9CubEJ82AkvD5ScoAZNYRwBxybayainhyThHAZWCdKmPYn.5000 */
+       minerd -u 42VxjBpfi4TS6KFjNrrKo3QLcyK7gBGfM9w7DxmGRcocYnEbJ1hhZWXfaHJtCXBxnL74DpkioPSivjRYU8qkt59s3EaHUU3.5000 */
     "fixedDiff": {
         "enabled": true,
         "separator": ".", // character separator between <address> and <difficulty>
@@ -240,10 +246,10 @@ Explanation for each field:
     "interval": 600, //how often to run in seconds
     "maxAddresses": 50, //split up payments if sending to more than this many addresses
     "mixin": 3, //number of transactions yours is indistinguishable from
-    "transferFee": 5000000000, //fee to pay for each transaction
-    "minPayment": 100000000000, //miner balance required before sending payment
+    "transferFee": 5000, //fee to pay for each transaction
+    "minPayment": 30000000, //miner balance required before sending payment
     "maxTransactionAmount": 0, //split transactions by this amount(to prevent "too big transaction" error)
-    "denomination": 100000000000 //truncate to this precision and store remainder
+    "denomination": 1000 //truncate to this precision and store remainder
 },
 
 /* Module that monitors the submitted block maturities and manages rounds. Confirmed
@@ -402,19 +408,19 @@ Variable explanations:
 ```javascript
 
 /* Must point to the API setup in your config.json file. */
-var api = "http://poolhost:8117";
+var api = "http://monero.hiive.biz:8117";
 
 /* Pool server host to instruct your miners to point to.  */
-var poolHost = "poolhost.com";
+var poolHost = "monero.hiive.biz";
 
 /* IRC Server and room used for embedded KiwiIRC chat. */
-var irc = "irc.freenode.net/#ducknote";
+var irc = "irc.freenode.net/#hiive";
 
 /* Contact email address. */
-var email = "support@poolhost.com";
+var email = "support@hiive.biz";
 
 /* Market stat display params from https://www.cryptonator.com/widget */
-var cryptonatorWidget = ["XDN-BTC", "XDN-USD", "XDN-EUR"];
+var cryptonatorWidget = ["{symbol}-BTC", "{symbol}-CAD", "{symbol}-USD", "BTC-CAD", "BTC-USD"];
 
 /* Download link to cryptonote-easy-miner for Windows users. */
 var easyminerDownload = "https://github.com/zone117x/cryptonote-easy-miner/releases/";
