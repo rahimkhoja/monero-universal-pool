@@ -1,0 +1,16 @@
+[Unit]
+Description=Monero Full Node
+After=network.target
+
+[Service]
+User=bitmonero
+Group=monero
+Restart=always
+RestartSec=10
+Type=forking
+ExecStart=/opt/monero/bin/monerod --config-file /etc/monero/monerod.conf --detach
+
+GuessMainPID=no
+
+[Install]
+WantedBy=multi-user.target
