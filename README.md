@@ -451,11 +451,10 @@ Then simply serve the files via nginx, Apache, Google Drive, or anything that ca
 
 When updating to the latest code its important to not only git pull the latest from this repo, but to also update the Node.js modules, and any config files that may have been changed.
 
-    Inside your pool directory (where the init.js script is) do git pull to get the latest code.
-    Remove the dependencies by deleting the node_modules directory with rm -r node_modules.
-    Run npm update to force updating/reinstalling of the dependencies.
-    Compare your config.json to the latest example ones in this repo or the ones in the setup instructions where each config field is explained. You may need to modify or add any new changes.
-
+* Inside your pool directory (where the init.js script is) do git pull to get the latest code.
+* Remove the dependencies by deleting the node_modules directory with rm -r node_modules.
+* Run npm update to force updating/reinstalling of the dependencies.
+* Compare your config.json to the latest example ones in this repo or the ones in the setup instructions where each config field is explained. You may need to modify or add any new changes.
 
 Credit to surfer43 for these instructions
 
