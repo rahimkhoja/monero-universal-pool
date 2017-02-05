@@ -2,6 +2,7 @@ monero-cryptonote-pool
 ======================
 
 High performance Node.js (with native C addons) mining pool for CryptoNote based coins. ( Monero )
+I hacked this together from https://github.com/fancoder/cryptonote-universal-pool & https://github.com/zone117x/node-cryptonote-pool.  
 
 
 
@@ -89,6 +90,7 @@ Usage
 ====
 
 #### Requirements
+
 * Coin daemon(s) (find the coin's repo and build latest version from source)
 * [Node.js](http://nodejs.org/) v0.10+ ([follow these installation instructions](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager))
   * I used node-v0.10.48-linux-x64 on Ubuntu
@@ -103,9 +105,9 @@ If you use old versions of Node.js or Redis that may come with your system packa
 include `bind 127.0.0.1` in your `redis.conf` file. Also it's a good idea to learn about and understand software that
 you are using - a good place to start with redis is [data persistence](http://redis.io/topics/persistence).
 
+Follow the Ubuntu 16.04 LTS install text file for quick setup. ( https://github.com/CanadianRepublican/monero-universal-pool/blob/master/install_guide_ubuntu_16.04.txt )
 
 #### 1) Downloading & Installing
-
 
 Clone the repository and run `npm update` for all the dependencies to be installed:
 
@@ -115,8 +117,8 @@ cd pool
 npm update
 ```
 
-Systemd files have been added for the Monero Daemon and Monero Wallet in the Utils folder.
-They will need to be customized for your own setup.
+Systemd files have been added for the Monero Daemon, Monero Wallet, and Regis in the Utils folder.
+The Monero Daemon and Wallet service files will need to be customized for your own setup.
 
 #### 2) Configuration
 
