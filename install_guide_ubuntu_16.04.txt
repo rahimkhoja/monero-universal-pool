@@ -1,9 +1,18 @@
-// Regis - Node
-// Ubuntu 64 bit 16.04 LTS
-// Node version used: https://nodejs.org/download/release/v0.10.48/node-v0.10.48-linux-x64.tar.gz
+# Monero Pool Install Script
+# By: Rahim Khoja ( rahim@khoja.ca )
+#
+# Based on zone117x node-cryptonote-pool & fancoder cryptonote-universal-pool
+# https://github.com/fancoder/cryptonote-universal-pool 
+# https://github.com/zone117x/node-cryptonote-pool
+#
+# Requires Ubuntu 16.04
+# Installs Node 0.10.48 64-Bit & Redis
+#
 
+# System Updates and Pool Requirements
 sudo apt-get update
 sudo apt-get install git libssl-dev libboost-all-dev build-essential tcl curl gcc g++ cmake
+
 cd /tmp
 curl -O http://download.redis.io/redis-stable.tar.gz
 tar xzvf redis-stable.tar.gz
@@ -18,9 +27,11 @@ sudo mkdir /var/lib/redis
 sudo chown redis:redis /var/lib/redis
 sudo chmod 770 /var/lib/redis
 
-sudo nano /etc/redis/redis.conf
-// Change line that starts with "supervised no" to "supervised systemd"
-// Change line that starts with "dir ./"  to "dir /var/lib/redis"
+sudo nano 
+# Change line that starts with "supervised no" to "supervised systemd"
+sudo sed -i 's/supervised no/supervised systemd/g' /etc/redis/redis.conf
+# Change line that starts with "dir ./"  to "dir /var/lib/redis"
+sudo sed -i 's/dir .\//dir \/var\/lib\/redis/g' /etc/redis/redis.conf
 
 cd /tmp
 curl -O https://nodejs.org/download/release/v0.10.48/node-v0.10.48-linux-x64.tar.gz
@@ -29,11 +40,13 @@ sudo cp /tmp/node-v0.10.48-linux-x64/bin/node /usr/bin/
 sudo cp -R /tmp/node-v0.10.48-linux-x64/lib/* /usr/lib/
 sudo ln -s /usr/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
 
-cd ~
+cd /tmp
 git clone https://github.com/CanadianRepublican/monero-universal-pool.git pool
-cd pool
+sudo mv ./pool /opt/pool
+cd /opt/pool
 npm update
 
+# Firewall Setup
 sudo ufw allow http
 sudo ufw allow https
 sudo ufw allow 3333
