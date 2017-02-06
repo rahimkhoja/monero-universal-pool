@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Monero Pool Install Script
 # By: Rahim Khoja ( rahim@khoja.ca )
 #
