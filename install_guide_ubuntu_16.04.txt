@@ -10,9 +10,11 @@
 #
 
 # System Updates and Pool Requirements
-sudo apt-get update
+yes | sudo apt-get -y --force-yes update
+yes | sudo apt-get -y --force-yes upgrade
 sudo apt-get install git libssl-dev libboost-all-dev build-essential tcl curl gcc g++ cmake
 
+# Install Redis
 cd /tmp
 curl -O http://download.redis.io/redis-stable.tar.gz
 tar xzvf redis-stable.tar.gz
@@ -27,12 +29,13 @@ sudo mkdir /var/lib/redis
 sudo chown redis:redis /var/lib/redis
 sudo chmod 770 /var/lib/redis
 
-sudo nano 
+# Update Redis Files
 # Change line that starts with "supervised no" to "supervised systemd"
 sudo sed -i 's/supervised no/supervised systemd/g' /etc/redis/redis.conf
 # Change line that starts with "dir ./"  to "dir /var/lib/redis"
 sudo sed -i 's/dir .\//dir \/var\/lib\/redis/g' /etc/redis/redis.conf
 
+# Install Node 0.10.48
 cd /tmp
 curl -O https://nodejs.org/download/release/v0.10.48/node-v0.10.48-linux-x64.tar.gz
 tar xzvf node-v0.10.48-linux-x64.tar.gz
@@ -40,6 +43,7 @@ sudo cp /tmp/node-v0.10.48-linux-x64/bin/node /usr/bin/
 sudo cp -R /tmp/node-v0.10.48-linux-x64/lib/* /usr/lib/
 sudo ln -s /usr/lib/node_modules/npm/bin/npm-cli.js /usr/bin/npm
 
+# Install Pool
 cd /tmp
 git clone https://github.com/CanadianRepublican/monero-universal-pool.git pool
 sudo mv ./pool /opt/pool
