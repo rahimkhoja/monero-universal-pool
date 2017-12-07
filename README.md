@@ -84,7 +84,7 @@ However both cryptonote-universal-pool & node-cryptonote-pool provide much of th
 #### Pools Using This Software
 
 * http://monero.hiive.biz
-
+* http://monero.miningguild.org (Beta)
 
 Usage
 ====

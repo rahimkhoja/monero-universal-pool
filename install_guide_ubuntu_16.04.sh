@@ -11,9 +11,9 @@
 #
 
 # System Updates and Pool Requirements
-yes | sudo apt-get -y --force-yes update
-yes | sudo apt-get -y --force-yes upgrade
-sudo apt-get install git libssl-dev libboost-all-dev build-essential tcl curl gcc g++ cmake
+yes | sudo apt -y --force-yes update
+yes | sudo apt -y --force-yes upgrade
+sudo apt install git libssl-dev libboost-all-dev build-essential tcl curl gcc g++ cmake -y
 
 # Install Redis
 cd /tmp
